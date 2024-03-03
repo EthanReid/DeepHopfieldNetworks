@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from typing import Union, Callable, Tuple, Dict, List, Optional
 import torch.func as F
-from .types import *
+from .misc import *
 from einops import rearrange
 
 class Neuron(nn.Module):
@@ -14,11 +14,13 @@ class Neuron(nn.Module):
     def activation(self, x: TENSOR) -> TENSOR:
         return self._activation(x)
     
-    def energy(self, g: TENSOR, x: TENSOR): #not sure what the type would be, scalar or a vector?
+    #there might be an error in my matmul, matmul(g^t,x) was giving the outer product.
+    def energy(self, g: TENSOR, x: TENSOR) -> TENSOR: #not sure what the type would be, scalar or a vector?
         #print("g type: {}\n x type: {}".format(g.type(), x.type()))
-        g = rearrange(g, "b c h w -> b c w h")
+        g = transpose(g) #do I need a transpose, should this happen before, assume [B, C, (H*W)] or [B, (C*H*W)]. RN its [B, C, H, W]
         l = self._lagrangian(x)
-        e = torch.matmul(g, x).sum() - l
+        e = torch.matmul(x, g).sum() - l
+        #e = torch.matmul(g, x).sum() - l
         return e
     
     def forward(self, x: TENSOR): #idk return type as I dont know return of energy

@@ -7,7 +7,7 @@ from torchvision.utils import save_image
 from torch.optim import Adam
 import numpy as np
 from pathlib import Path
-from scripts import *
+from diffusion_scripts import *
 from datasets import load_dataset
 from torch.utils.data import DataLoader
 
@@ -22,7 +22,7 @@ class Manager:
         dataset = load_dataset("fashion_mnist")
         self.image_size = 28
         self.channels = 1
-        self.batch_size = 16
+        self.batch_size = 512
         self.epochs = epochs
         self.transformed_dataset = dataset.with_transform(transforms).remove_columns("label")
         self.dataloader = DataLoader(self.transformed_dataset["train"], batch_size=self.batch_size, num_workers=2, shuffle=True)
@@ -30,10 +30,14 @@ class Manager:
         self.device = get_device()
         
         self.lr = 1e-3
-        hn_mult = 4
+        hn_mult = 2
 
         x = torch.randn(1, 1, 28, 28)
-        self.model = Energy_Model(self.image_size, multiplier=hn_mult)
+        #self.model = Energy_Model(self.image_size, multiplier=hn_mult)
+        #self.model = Energy_Model_linked(self.image_size, multiplier=hn_mult)
+        #self.model = Energy_Model_Conv(in_channels=1, out_channels=4, kernal_size=(3,3))
+        self.model = Energy_Model_Conv_Linked(in_channels=1, out_channels=8, kernal_size=(3,3))
+        #self.model = Energy_Model_T()
         summary(self.model)
         self.model.to(self.device)
         self.optimizer = Adam(self.model.parameters(), lr=self.lr)
@@ -100,7 +104,7 @@ class Manager:
                     "optimizer": self.optimizer.state_dict()}
                 if not os.path.isdir('checkpoint'):
                     os.mkdir('checkpoint')
-                torch.save(state, './checkpoint/energy_transformer-ckpt.t7')
+                torch.save(state, './testing/energy_model_basic_hop/checkpoint/conv_energy_model-ckpt.t7')
             self.scheduler.step()
     def test(self):
         '''
@@ -116,7 +120,7 @@ class Manager:
         this is hard coded, fix it
         '''
         assert os.path.isdir('checkpoint'), 'Error: no checkpoint directory found!'
-        checkpoint = torch.load('./checkpoint/{}'.format("energy_transformer-ckpt.t7"))
+        checkpoint = torch.load('./testing/energy_model_basic_hop/checkpoint/{}'.format("conv_energy_model-ckpt.t7"))
         self.model.load_state_dict(checkpoint['model'])
 if __name__ == '__main__':
     manager = Manager(epochs=10)
