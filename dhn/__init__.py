@@ -4,4 +4,4 @@ from .layers import *
 from .lagrangian import *
 from .neuron import *
 from .synapse import *
-from .types import *
+from .misc import *

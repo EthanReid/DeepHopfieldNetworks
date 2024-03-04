@@ -54,12 +54,12 @@ class Conv2d(nn.Module):
                  in_channels: int,
                  out_channels: int,
                  kernal_size: Tuple[int, int],
-                 stride: int,
+                 stride: int = 1,
                  padding = "same",
                  mean = 0.5,
                  std = 0.01,
-                 lagrangian: Callable = None,
-                 activation: Callable = None):
+                 lagrangian: Callable = Lagrangian.identity,
+                 activation: Callable = nn.Identity()):
         super().__init__()
         if padding != "same":
             padding = 0
@@ -78,3 +78,73 @@ class Conv2d(nn.Module):
         g_2, e_g_2 = self.neuron(x_2)
         e_s = self.synapse(g_2, x_2)
         return g_2, (e_g_2 + e_s)
+
+class MaxPool2d(nn.Module):
+    def __init__(self,
+                 kernal_size: Tuple[int,int],
+                 stride: int,
+                 padding: int,
+                 lagrangian: Callable = Lagrangian.identity,
+                 activation: Callable = nn.Identity()):
+        super().__init__()
+        self.pool = nn.MaxPool2d(
+            kernel_size=kernal_size,
+            stride=stride,
+            padding=padding
+        )
+        self.neuron = Neuron(lagrangian=lagrangian, activation=activation)
+        self.synapse = Synapse()
+    
+    def forward(self, g_1: TENSOR):
+        x_2 = self.pool(g_1)
+        g_2, e_g_2 = self.neuron(x_2)
+        e_s = self.synapse(g_2, x_2)
+        return g_2, (e_g_2 + e_s)
+
+class Add(nn.Module):
+    def __init__(self,
+                 lagrangian: Callable = None,
+                 activation: Callable = None):
+        super().__init__()
+        self.neuron = Neuron(lagrangian=lagrangian, activation=activation)
+        self.synapse = Synapse()
+    
+    def forward(self, g_1: TENSOR, g_2: TENSOR):
+        x_3 = g_1 + g_2
+        g_3, e_g_3 = self.neuron(x_3)
+        e_s = self.synapse(g_3, x_3)
+        return g_3, (e_g_3 + e_s)
+
+class ConvAttention(nn.Module):
+    def __init__(self, dim, heads=4, dim_head=32):
+        super().__init__()
+        self.scale = dim_head**-0.5
+        self.heads = heads
+        hidden_dim = dim_head * heads
+        self.to_qkv = Conv2d(dim, hidden_dim * 3, kernal_size=(1,1))
+        self.to_out = Conv2d(hidden_dim, dim, kernal_size=(1,1))
+        self.softmax = Neuron(lagrangian=Lagrangian.softmax, activation=nn.Softmax(-1))
+
+    def forward(self, x):
+        b, c, h, w = x.shape
+        qkv, e_qkv = self.to_qkv(x)
+        qkv = qkv.chunk(3, dim=1)
+        q, k, v = map(
+            lambda t: rearrange(t, "b (h c) x y -> b h c (x y)", h=self.heads), qkv
+        )
+        q = q * self.scale
+
+        sim = torch.einsum("b h d i, b h d j -> b h i j", q, k)
+        sim = sim - sim.amax(dim=-1, keepdim=True).detach()
+        attn, e_attn = self.softmax(sim)
+
+        out = torch.einsum("b h i j, b h d j -> b h i d", attn, v)
+        out = rearrange(out, "b h (x y) d -> b (h d) x y", x=h, y=w)
+        out, e_out = self.to_out(out)
+        return out, e_attn+e_out+e_qkv
+
+
+def MakeLayer(transformation: Callable, lagrangian: Callable = None, activation: Callable = None):
+    return Generic(transformation, lagrangian, activation)
+
+#add a make layer func that can reuse the generic

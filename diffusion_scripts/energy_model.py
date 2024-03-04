@@ -165,7 +165,7 @@ class Energy_Block_Conv_Linked(nn.Module):
             out_channels=1,
             kernal_size=(2,2)
         )
-        #self.hop_t = Energy_Hop_T()
+        self.hop_t = Energy_Hop_T()
     
     def forward(self, x: TENSOR):
         g_1, e_g_1 = self.input(x)
@@ -176,8 +176,8 @@ class Energy_Block_Conv_Linked(nn.Module):
         g_6, e_g_6 = self.conv_5(g_5)
         #g_5, e_g_5 = self.flat(g_4)#doesnt work
         #e_g_6 = self.linear_x(g_5)
-       # e_g_5 = self.hop_t(g_4)
-        return (e_g_1 + e_g_2 + e_g_3 + e_g_4 + e_g_5 + e_g_6)
+        e_g_7 = self.hop_t(g_6)
+        return (e_g_1 + e_g_2 + e_g_3 + e_g_4 + e_g_5 + e_g_6 +e_g_7)
 
 class Energy_Hop_T(nn.Module):
     def __init__(self):

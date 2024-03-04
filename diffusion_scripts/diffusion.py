@@ -110,7 +110,7 @@ def sigmoid_beta_schedule(timesteps):
 
 
 #NNEED TO MAKE THIS OOP
-timesteps = 100
+timesteps = 1000
 
 # define beta schedule
 betas = linear_beta_schedule(timesteps=timesteps)
