@@ -2,3 +2,7 @@
 *.pyc
 *.t7
 *.pyc
+*.t7
+*.pyc
+*.png
+testing/energy_model_basic_hop/.DS_Store
