@@ -6,3 +6,4 @@ torch_summary
 torchvision
 tqdm
 wandb
+torch_xla

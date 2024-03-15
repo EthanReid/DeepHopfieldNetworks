@@ -62,8 +62,11 @@ class Patch(nn.Module):
 
         return self.transform(x)
 
-def get_device():
-    if torch.backends.mps.is_available():
+def get_device(xla=False):
+    if xla:
+        import torch_xla.core.xla_model as xm
+        device = xm.xla_device()
+    elif torch.backends.mps.is_available():
         device = torch.device("mps")
         print("MPS device found")
     elif torch.cuda.is_available():

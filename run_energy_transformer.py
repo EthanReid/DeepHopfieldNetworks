@@ -44,7 +44,7 @@ class Manager:
         #self.transformed_dataset = dataset.map(transforms, remove_columns=["label"], batched=True)
         self.dataloader = DataLoader(dataset=self.transformed_dataset,batch_size=self.batch_size, num_workers=args.nworkers if not args.stream_data else min(args.nworkers,dataset.n_shards), shuffle=False)
 
-        self.device = get_device()
+        self.device = get_device(args.xla)
         
         self.lr = args.lr
         hn_mult = args.hn_mult
@@ -127,10 +127,7 @@ class Manager:
             samples_seen = 0
             milestone += 1
             print("saving images")
-            all_images = torch.Tensor(sample(self.model, image_size=self.image_size,batch_size=1, channels=self.channels))
-            all_images = (all_images + 1) * 0.5
-            all_images = all_images.squeeze(1)
-            save_image(all_images, str(self.results_folder / f'sample-{milestone}.png'), nrow = 10)
+            self.save_img(str(self.results_folder / f'sample-{milestone}.png'), everyn=100)
                 
             if best_loss==None or best_loss>current_loss:
                 best_loss = current_loss
@@ -141,14 +138,20 @@ class Manager:
                     os.mkdir('checkpoint')
                 torch.save(state, './testing/energy_transformer/checkpoint/et-patch_{}-hnmult_{}.t7'.format(args.patch_size, args.hnmult))
             self.scheduler.step()
+    
+    def save_img(self, path, nrow=10, everyn=0):
+        all_images = torch.Tensor(sample(self.model, image_size=self.image_size,batch_size=1, channels=self.channels))
+        all_images = (all_images + 1) * 0.5
+        all_images = all_images.squeeze(1)
+        if everyn>0:
+            all_images = all_images[::everyn]
+        save_image(all_images, path, nrow = nrow)
+
     def test(self):
         '''
         hard coded, fix it
         '''
-        all_images = torch.Tensor(sample(self.model, image_size=self.image_size,batch_size=1, channels=self.channels))
-        all_images = (all_images + 1) * 0.5
-        all_images = all_images.squeeze(1)
-        save_image(all_images, str(self.test_out / f'test_out.png'), nrow = 10)
+        self.save_img(str(self.test_out / f'test_out.png'), everyn=100)
     
     def load_ckpt(self, ckpt):
         '''
@@ -174,6 +177,7 @@ if __name__ == '__main__':
     parser.add_argument("--stream_data", action="store_true", help="stream hugging face dataset")
     parser.add_argument("--nworkers", default=0, type=int, help="num of workers for dataloader, if streaming, should be set to num shards")
     parser.add_argument("--shuffle", action="store_true", help="shuffle dataset, only works if not streaming")
+    parser.add_argument("--xla", action="store_true", help="Enable XLA")
     args = parser.parse_args()
 
     manager = Manager(args=args)
