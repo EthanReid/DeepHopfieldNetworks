@@ -1,0 +1,201 @@
+2024-03-11 19:40:20,772 INFO    StreamThr :93609 [internal.py:wandb_internal():86] W&B internal server running at pid: 93609, started at: 2024-03-11 19:40:20.771574
+2024-03-11 19:40:20,773 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: status
+2024-03-11 19:40:20,775 INFO    WriterThread:93609 [datastore.py:open_for_write():87] open: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/run-evu3jaqn.wandb
+2024-03-11 19:40:20,776 DEBUG   SenderThread:93609 [sender.py:send():382] send: header
+2024-03-11 19:40:20,803 DEBUG   SenderThread:93609 [sender.py:send():382] send: run
+2024-03-11 19:40:21,102 INFO    SenderThread:93609 [dir_watcher.py:__init__():211] watching files in: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files
+2024-03-11 19:40:21,102 INFO    SenderThread:93609 [sender.py:_start_run_threads():1136] run started: evu3jaqn with start time 1710211220.771012
+2024-03-11 19:40:21,114 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: check_version
+2024-03-11 19:40:21,114 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: check_version
+2024-03-11 19:40:21,231 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: run_start
+2024-03-11 19:40:21,237 DEBUG   HandlerThread:93609 [system_info.py:__init__():27] System info init
+2024-03-11 19:40:21,237 DEBUG   HandlerThread:93609 [system_info.py:__init__():42] System info init done
+2024-03-11 19:40:21,237 INFO    HandlerThread:93609 [system_monitor.py:start():194] Starting system monitor
+2024-03-11 19:40:21,237 INFO    SystemMonitor:93609 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-03-11 19:40:21,237 INFO    HandlerThread:93609 [system_monitor.py:probe():214] Collecting system info
+2024-03-11 19:40:21,238 INFO    SystemMonitor:93609 [interfaces.py:start():190] Started cpu monitoring
+2024-03-11 19:40:21,239 DEBUG   HandlerThread:93609 [system_info.py:probe():151] Probing system
+2024-03-11 19:40:21,240 INFO    SystemMonitor:93609 [interfaces.py:start():190] Started disk monitoring
+2024-03-11 19:40:21,241 INFO    SystemMonitor:93609 [interfaces.py:start():190] Started gpuapple monitoring
+2024-03-11 19:40:21,243 INFO    SystemMonitor:93609 [interfaces.py:start():190] Started memory monitoring
+2024-03-11 19:40:21,243 INFO    SystemMonitor:93609 [interfaces.py:start():190] Started network monitoring
+2024-03-11 19:40:21,247 DEBUG   HandlerThread:93609 [system_info.py:_probe_git():136] Probing git
+2024-03-11 19:40:21,273 DEBUG   HandlerThread:93609 [system_info.py:_probe_git():144] Probing git done
+2024-03-11 19:40:21,273 DEBUG   HandlerThread:93609 [system_info.py:probe():199] Probing system done
+2024-03-11 19:40:21,273 DEBUG   HandlerThread:93609 [system_monitor.py:probe():223] {'os': 'macOS-14.3.1-arm64-arm-64bit', 'python': '3.11.5', 'heartbeatAt': '2024-03-12T02:40:21.240024', 'startedAt': '2024-03-12T02:40:20.760809', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py', 'codePathLocal': 'run_energy_transformer.py', 'codePath': 'run_energy_transformer.py', 'git': {'remote': 'https://github.com/EthanReid/DeepHopfieldNetworks.git', 'commit': '5c1787099951d763bf5a383d6617bda52258c3a0'}, 'email': 'erpreid@gmail.com', 'root': '/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks', 'host': 'Ethans-MacBook-Pro-16.local', 'username': 'ethanreid', 'executable': '/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/bin/python3', 'cpu_count': 10, 'cpu_count_logical': 10, 'disk': {'/': {'total': 926.3517189025879, 'used': 9.43375015258789}}, 'gpuapple': {'type': 'arm', 'vendor': 'Apple'}, 'memory': {'total': 64.0}}
+2024-03-11 19:40:21,273 INFO    HandlerThread:93609 [system_monitor.py:probe():224] Finished collecting system info
+2024-03-11 19:40:21,273 INFO    HandlerThread:93609 [system_monitor.py:probe():227] Publishing system info
+2024-03-11 19:40:21,274 INFO    HandlerThread:93609 [system_monitor.py:probe():229] Finished publishing system info
+2024-03-11 19:40:21,279 DEBUG   SenderThread:93609 [sender.py:send():382] send: files
+2024-03-11 19:40:21,280 INFO    SenderThread:93609 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-03-11 19:40:21,284 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: python_packages
+2024-03-11 19:40:21,284 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 19:40:21,284 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: python_packages
+2024-03-11 19:40:21,285 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 19:40:21,285 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 19:40:21,514 DEBUG   SenderThread:93609 [sender.py:send():382] send: telemetry
+2024-03-11 19:40:21,514 DEBUG   SenderThread:93609 [sender.py:send():382] send: telemetry
+2024-03-11 19:40:21,767 INFO    wandb-upload_0:93609 [upload_job.py:push():131] Uploaded file /var/folders/6b/s16tm0411hb1gclms1rkx3mh0000gn/T/tmpooev8eqswandb/cbiby8mx-wandb-metadata.json
+2024-03-11 19:40:22,107 INFO    Thread-12 :93609 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/requirements.txt
+2024-03-11 19:40:22,108 INFO    Thread-12 :93609 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/output.log
+2024-03-11 19:40:22,108 INFO    Thread-12 :93609 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/wandb-metadata.json
+2024-03-11 19:40:24,117 INFO    Thread-12 :93609 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/output.log
+2024-03-11 19:40:26,571 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 19:40:30,149 INFO    Thread-12 :93609 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/output.log
+2024-03-11 19:40:31,921 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 19:40:36,286 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 19:40:36,286 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 19:40:36,289 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 19:40:37,419 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 19:40:42,210 INFO    Thread-12 :93609 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/output.log
+2024-03-11 19:40:43,384 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 19:40:48,408 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 19:40:51,290 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 19:40:51,291 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 19:40:51,291 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 19:40:53,846 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 19:40:54,274 INFO    Thread-12 :93609 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/output.log
+2024-03-11 19:40:54,274 INFO    Thread-12 :93609 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/config.yaml
+2024-03-11 19:40:58,965 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 19:41:00,696 DEBUG   SenderThread:93609 [sender.py:send():382] send: exit
+2024-03-11 19:41:00,696 INFO    SenderThread:93609 [sender.py:send_exit():589] handling exit code: 255
+2024-03-11 19:41:00,696 INFO    SenderThread:93609 [sender.py:send_exit():591] handling runtime: 39
+2024-03-11 19:41:00,697 INFO    SenderThread:93609 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-11 19:41:00,697 INFO    SenderThread:93609 [sender.py:send_exit():597] send defer
+2024-03-11 19:41:00,697 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:00,697 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 0
+2024-03-11 19:41:00,697 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:00,697 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-03-11 19:41:00,697 INFO    SenderThread:93609 [sender.py:transition_state():617] send defer: 1
+2024-03-11 19:41:00,697 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:00,697 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 1
+2024-03-11 19:41:00,697 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:00,697 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-03-11 19:41:00,697 INFO    SenderThread:93609 [sender.py:transition_state():617] send defer: 2
+2024-03-11 19:41:00,698 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:00,698 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 2
+2024-03-11 19:41:00,698 INFO    HandlerThread:93609 [system_monitor.py:finish():203] Stopping system monitor
+2024-03-11 19:41:00,698 DEBUG   SystemMonitor:93609 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-03-11 19:41:00,698 DEBUG   SystemMonitor:93609 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-03-11 19:41:00,698 DEBUG   SystemMonitor:93609 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-03-11 19:41:00,698 INFO    HandlerThread:93609 [interfaces.py:finish():202] Joined cpu monitor
+2024-03-11 19:41:00,699 INFO    HandlerThread:93609 [interfaces.py:finish():202] Joined disk monitor
+2024-03-11 19:41:00,965 INFO    HandlerThread:93609 [interfaces.py:finish():202] Joined gpuapple monitor
+2024-03-11 19:41:00,965 INFO    HandlerThread:93609 [interfaces.py:finish():202] Joined memory monitor
+2024-03-11 19:41:00,965 INFO    HandlerThread:93609 [interfaces.py:finish():202] Joined network monitor
+2024-03-11 19:41:00,966 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:00,966 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-03-11 19:41:00,966 INFO    SenderThread:93609 [sender.py:transition_state():617] send defer: 3
+2024-03-11 19:41:00,966 DEBUG   SenderThread:93609 [sender.py:send():382] send: telemetry
+2024-03-11 19:41:00,966 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:00,966 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 3
+2024-03-11 19:41:00,966 DEBUG   SenderThread:93609 [sender.py:send():382] send: stats
+2024-03-11 19:41:00,966 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:00,966 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-03-11 19:41:00,966 INFO    SenderThread:93609 [sender.py:transition_state():617] send defer: 4
+2024-03-11 19:41:00,966 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:00,966 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 4
+2024-03-11 19:41:00,966 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:00,966 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-03-11 19:41:00,966 INFO    SenderThread:93609 [sender.py:transition_state():617] send defer: 5
+2024-03-11 19:41:00,966 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:00,966 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 5
+2024-03-11 19:41:00,966 DEBUG   SenderThread:93609 [sender.py:send():382] send: summary
+2024-03-11 19:41:00,967 INFO    SenderThread:93609 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-11 19:41:00,967 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:00,967 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-03-11 19:41:00,967 INFO    SenderThread:93609 [sender.py:transition_state():617] send defer: 6
+2024-03-11 19:41:00,967 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:00,967 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 6
+2024-03-11 19:41:00,967 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:00,967 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-03-11 19:41:00,968 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 19:41:01,064 INFO    SenderThread:93609 [sender.py:transition_state():617] send defer: 7
+2024-03-11 19:41:01,064 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:01,064 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 7
+2024-03-11 19:41:01,065 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:01,065 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-03-11 19:41:01,308 INFO    Thread-12 :93609 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/config.yaml
+2024-03-11 19:41:01,308 INFO    Thread-12 :93609 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/wandb-summary.json
+2024-03-11 19:41:01,702 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-11 19:41:02,702 INFO    SenderThread:93609 [sender.py:transition_state():617] send defer: 8
+2024-03-11 19:41:02,703 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: poll_exit
+2024-03-11 19:41:02,703 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:02,703 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 8
+2024-03-11 19:41:02,703 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:02,704 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-03-11 19:41:02,704 INFO    SenderThread:93609 [job_builder.py:build():296] Attempting to build job artifact
+2024-03-11 19:41:02,705 INFO    SenderThread:93609 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-03-11 19:41:02,737 INFO    SenderThread:93609 [job_builder.py:build():402] adding wandb-job metadata file
+2024-03-11 19:41:02,740 INFO    SenderThread:93609 [sender.py:transition_state():617] send defer: 9
+2024-03-11 19:41:02,740 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:02,740 DEBUG   SenderThread:93609 [sender.py:send():382] send: artifact
+2024-03-11 19:41:02,740 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 9
+2024-03-11 19:41:03,195 INFO    SenderThread:93609 [sender.py:send_artifact():1494] sent artifact job-https___github.com_EthanReid_DeepHopfieldNetworks.git_run_energy_transformer.py - {'id': 'QXJ0aWZhY3Q6NzUyMzI2OTAz', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE0NzkwMTQ4OQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NzUyMzczNzI4', 'versionIndex': 1}}}
+2024-03-11 19:41:03,196 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:03,196 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-03-11 19:41:03,196 INFO    SenderThread:93609 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-03-11 19:41:03,315 INFO    Thread-12 :93609 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/output.log
+2024-03-11 19:41:03,316 INFO    SenderThread:93609 [dir_watcher.py:finish():388] scan: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files
+2024-03-11 19:41:03,316 INFO    SenderThread:93609 [dir_watcher.py:finish():402] scan save: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/requirements.txt requirements.txt
+2024-03-11 19:41:03,317 INFO    SenderThread:93609 [dir_watcher.py:finish():402] scan save: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/output.log output.log
+2024-03-11 19:41:03,317 INFO    SenderThread:93609 [dir_watcher.py:finish():402] scan save: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/config.yaml config.yaml
+2024-03-11 19:41:03,317 INFO    SenderThread:93609 [dir_watcher.py:finish():402] scan save: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/wandb-summary.json wandb-summary.json
+2024-03-11 19:41:03,317 INFO    SenderThread:93609 [dir_watcher.py:finish():402] scan save: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/wandb-metadata.json wandb-metadata.json
+2024-03-11 19:41:03,317 INFO    SenderThread:93609 [sender.py:transition_state():617] send defer: 10
+2024-03-11 19:41:03,318 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:03,318 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 10
+2024-03-11 19:41:03,323 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:03,323 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-03-11 19:41:03,323 INFO    SenderThread:93609 [file_pusher.py:finish():175] shutting down file pusher
+2024-03-11 19:41:03,620 INFO    wandb-upload_0:93609 [upload_job.py:push():131] Uploaded file /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/requirements.txt
+2024-03-11 19:41:03,699 INFO    wandb-upload_1:93609 [upload_job.py:push():131] Uploaded file /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/output.log
+2024-03-11 19:41:03,709 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-11 19:41:03,710 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: poll_exit
+2024-03-11 19:41:03,779 INFO    wandb-upload_3:93609 [upload_job.py:push():131] Uploaded file /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/wandb-summary.json
+2024-03-11 19:41:03,783 INFO    wandb-upload_2:93609 [upload_job.py:push():131] Uploaded file /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/files/config.yaml
+2024-03-11 19:41:03,989 INFO    Thread-11 (_thread_body):93609 [sender.py:transition_state():617] send defer: 11
+2024-03-11 19:41:03,990 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:03,990 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 11
+2024-03-11 19:41:03,990 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:03,990 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-03-11 19:41:03,991 INFO    SenderThread:93609 [file_pusher.py:join():181] waiting for file pusher
+2024-03-11 19:41:03,991 INFO    SenderThread:93609 [sender.py:transition_state():617] send defer: 12
+2024-03-11 19:41:03,991 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:03,991 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 12
+2024-03-11 19:41:03,992 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:03,992 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-03-11 19:41:03,992 INFO    SenderThread:93609 [file_stream.py:finish():595] file stream finish called
+2024-03-11 19:41:04,090 INFO    SenderThread:93609 [file_stream.py:finish():599] file stream finish is done
+2024-03-11 19:41:04,090 INFO    SenderThread:93609 [sender.py:transition_state():617] send defer: 13
+2024-03-11 19:41:04,091 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:04,091 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 13
+2024-03-11 19:41:04,091 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:04,091 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-03-11 19:41:04,092 INFO    SenderThread:93609 [sender.py:transition_state():617] send defer: 14
+2024-03-11 19:41:04,092 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 19:41:04,092 INFO    HandlerThread:93609 [handler.py:handle_request_defer():172] handle defer: 14
+2024-03-11 19:41:04,093 DEBUG   SenderThread:93609 [sender.py:send():382] send: final
+2024-03-11 19:41:04,093 DEBUG   SenderThread:93609 [sender.py:send():382] send: footer
+2024-03-11 19:41:04,093 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: defer
+2024-03-11 19:41:04,093 INFO    SenderThread:93609 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-03-11 19:41:04,094 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-11 19:41:04,095 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: poll_exit
+2024-03-11 19:41:04,095 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-11 19:41:04,096 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: server_info
+2024-03-11 19:41:04,096 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: get_summary
+2024-03-11 19:41:04,096 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: poll_exit
+2024-03-11 19:41:04,097 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: server_info
+2024-03-11 19:41:04,098 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: sampled_history
+2024-03-11 19:41:04,099 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 19:41:04,099 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: job_info
+2024-03-11 19:41:04,184 DEBUG   SenderThread:93609 [sender.py:send_request():409] send_request: job_info
+2024-03-11 19:41:04,185 INFO    MainThread:93609 [wandb_run.py:_footer_history_summary_info():3857] rendering history
+2024-03-11 19:41:04,185 INFO    MainThread:93609 [wandb_run.py:_footer_history_summary_info():3889] rendering summary
+2024-03-11 19:41:04,185 INFO    MainThread:93609 [wandb_run.py:_footer_sync_info():3816] logging synced files
+2024-03-11 19:41:04,187 DEBUG   HandlerThread:93609 [handler.py:handle_request():146] handle_request: shutdown
+2024-03-11 19:41:04,187 INFO    HandlerThread:93609 [handler.py:finish():869] shutting down handler
+2024-03-11 19:41:05,104 INFO    WriterThread:93609 [datastore.py:close():296] close: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_194020-evu3jaqn/run-evu3jaqn.wandb
+2024-03-11 19:41:05,190 INFO    SenderThread:93609 [sender.py:finish():1572] shutting down sender
+2024-03-11 19:41:05,190 INFO    SenderThread:93609 [file_pusher.py:finish():175] shutting down file pusher
+2024-03-11 19:41:05,190 INFO    SenderThread:93609 [file_pusher.py:join():181] waiting for file pusher

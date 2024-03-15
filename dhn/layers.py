@@ -63,11 +63,11 @@ class Conv2d(nn.Module):
         super().__init__()
         if padding != "same":
             padding = 0
-        self.conv = nn.Conv2d(in_channels=in_channels,
+        self.conv = torch.jit.script(nn.Conv2d(in_channels=in_channels,
                               out_channels=out_channels,
                               kernel_size=kernal_size,
                               stride=stride,
-                              padding=padding)
+                              padding=padding))
         #nn.init.normal_(self.conv.weight, mean=mean, std=std)
         #nn.init.constant_(self.conv.bias, 0)
         self.neuron = Neuron(lagrangian=lagrangian, activation=activation)

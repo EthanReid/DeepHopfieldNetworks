@@ -1,0 +1,111 @@
+
+epoch: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ [=======>.................... 92/782 .............................]  Step: 3s726ms | Tot: 5m40s | Loss: 0.105
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1119fdf80>
+Traceback (most recent call last):
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1477, in __del__
+    def __del__(self):
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 93677) is killed by signal: Interrupt: 2.
+Traceback (most recent call last):
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py", line 145, in <module>
+    manager.train()
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py", line 92, in train
+    current_loss = loss.item()
+                   ^^^^^^^^^^^
+KeyboardInterrupt

@@ -27,7 +27,7 @@ class Patch(nn.Module):
         self,
         dim: int = 4,
         *,
-        n: int = 28,
+        n: int = 32,
     ):
         super().__init__()
 
@@ -81,12 +81,12 @@ def num_to_groups(num, divisor):
 
 transform = Compose([
             transforms.RandomHorizontalFlip(),
-            transforms.ToTensor(),
-            transforms.Lambda(lambda t: (t * 2) - 1)
+            transforms.ToTensor()
+            #transforms.Lambda(lambda t: (t * 2) - 1) #I dont want it to be betwen 0 and 1
 ])
 def transforms(examples):
-   examples["pixel_values"] = [transform(image.convert("L")) for image in examples["image"]]
-   del examples["image"]
+   examples["pixel_values"] = [transform(image) for image in examples["img"]] #changed from image.convert("L")
+   del examples["img"]
 
    return examples
 

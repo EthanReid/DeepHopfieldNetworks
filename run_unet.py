@@ -22,10 +22,10 @@ class Manager:
         dataset = load_dataset("fashion_mnist")
         self.image_size = 28
         self.channels = 1
-        self.batch_size = 64
+        self.batch_size = 256
         self.epochs = epochs
         self.transformed_dataset = dataset.with_transform(transforms).remove_columns("label")
-        self.dataloader = DataLoader(self.transformed_dataset["train"], batch_size=self.batch_size, num_workers=4, shuffle=True)
+        self.dataloader = DataLoader(self.transformed_dataset["train"], batch_size=self.batch_size, num_workers=8, shuffle=True)
 
         self.device = get_device()
         
@@ -36,7 +36,7 @@ class Manager:
         self.model = Unet_Model(
             dim=self.image_size,
             channels=self.channels,
-            dim_mults=(1,2,4,)
+            dim_mults=(1,1,2)
         )
         summary(self.model)
         self.model.to(self.device)
@@ -79,7 +79,7 @@ class Manager:
                 total_loss += current_loss
 
                 loss.backward()
-                torch.nn.utils.clip_grad_norm_(self.model.parameters(), 1)
+                #torch.nn.utils.clip_grad_norm_(self.model.parameters(), 1)
                 self.optimizer.step()
 
                 # save generated images
@@ -107,7 +107,7 @@ class Manager:
                     "optimizer": self.optimizer.state_dict()}
                 if not os.path.isdir('checkpoint'):
                     os.mkdir('checkpoint')
-                torch.save(state, './testing/unet/checkpoint/unet-1ckpt.t7')
+                torch.save(state, './testing/unet/checkpoint/unet-3ckpt.t7')
             self.scheduler.step()
     def test(self):
         '''
@@ -123,7 +123,7 @@ class Manager:
         this is hard coded, fix it
         '''
         assert os.path.isdir('checkpoint'), 'Error: no checkpoint directory found!'
-        checkpoint = torch.load('./testing/unet/checkpoint/{}'.format("unet-1ckpt.t7"))
+        checkpoint = torch.load('./testing/unet/checkpoint/{}'.format("unet-3ckpt.t7"))
         self.model.load_state_dict(checkpoint['model'])
 if __name__ == '__main__':
     manager = Manager(epochs=50)

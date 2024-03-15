@@ -1,0 +1,37 @@
+{
+    "os": "macOS-14.3.1-arm64-arm-64bit",
+    "python": "3.11.5",
+    "heartbeatAt": "2024-03-12T01:54:48.477501",
+    "startedAt": "2024-03-12T01:54:47.744073",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py",
+    "codePathLocal": "run_energy_transformer.py",
+    "codePath": "run_energy_transformer.py",
+    "git": {
+        "remote": "https://github.com/EthanReid/DeepHopfieldNetworks.git",
+        "commit": "5c1787099951d763bf5a383d6617bda52258c3a0"
+    },
+    "email": "erpreid@gmail.com",
+    "root": "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks",
+    "host": "Ethans-MacBook-Pro-16.local",
+    "username": "ethanreid",
+    "executable": "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/bin/python3",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "disk": {
+        "/": {
+            "total": 926.3517189025879,
+            "used": 9.43375015258789
+        }
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 64.0
+    }
+}

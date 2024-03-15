@@ -180,27 +180,27 @@ class Energy_Block_Conv_Linked(nn.Module):
         return (e_g_1 + e_g_2 + e_g_3 + e_g_4 + e_g_5 + e_g_6 +e_g_7)
 
 class Energy_Hop_T(nn.Module):
-    def __init__(self):
+    def __init__(self,in_dim=28, mult = 2):
         super().__init__()
         self.input = dhn.Input()
-        self.energy_block_1 = _Energy_Block(in_dim=28, multiplier=2, bias=F)
-        self.energy_block_1T = _Energy_Block(in_dim=28, multiplier=2, bias=F)
-        self.energy_block_2 = _Energy_Block(in_dim=28*2, multiplier=2, bias=F)
-        self.energy_block_2T = _Energy_Block(in_dim=28*2, multiplier=2, bias=F)
-        self.energy_block_3 = _Energy_Block(in_dim=28*2*2, multiplier=0.5, bias=F)
-        self.energy_block_3T = _Energy_Block(in_dim=28*2*2, multiplier=0.5, bias=F)
+        self.energy_block_1 = _Energy_Block(in_dim=in_dim, multiplier=mult, bias=F)
+        self.energy_block_1T = _Energy_Block(in_dim=in_dim, multiplier=mult, bias=F)
+        self.energy_block_2 = _Energy_Block(in_dim=in_dim*mult, multiplier=mult, bias=F)
+        self.energy_block_2T = _Energy_Block(in_dim=in_dim*mult, multiplier=mult, bias=F)
+        self.energy_block_3 = _Energy_Block(in_dim=in_dim*mult*mult, multiplier=1, bias=F)
+        self.energy_block_3t = _Energy_Block(in_dim=in_dim*mult*mult, multiplier=1, bias=F)
     
     def forward(self, x: TENSOR):
         x_t = dhn.transpose(x)
         x, e_g_0 = self.input(x)
         x_t, e_g_0t = self.input(x_t)
-        g_1, e_g_1 = self.energy_block_1(x)
-        g_1t, e_g_1t = self.energy_block_1T(x)
-        g_2, e_g_2 = self.energy_block_2(g_1)
-        g_2t, e_g_2t = self.energy_block_2T(g_1t)
-        g_3, e_g_3 = self.energy_block_3(g_2)
-        g_3t, e_g_3t = self.energy_block_3T(g_2t)
-        return (e_g_0 + e_g_0t + e_g_1 + e_g_1t + e_g_2 + e_g_2t + e_g_3 + e_g_3t)
+        g, e_g_1 = self.energy_block_1(x)
+        g_t, e_g_1t = self.energy_block_1T(x_t)
+        g_2, e_g_2 = self.energy_block_2(g)
+        g_2t, e_g_2t = self.energy_block_2T(g_t)
+        _, e_g_f = self.energy_block_3(g_2)
+        _, e_g_ft = self.energy_block_3t(g_2t)
+        return (e_g_0 + e_g_0t + e_g_1 + e_g_1t + e_g_2 + e_g_2t+ e_g_f + e_g_ft)
 
 
 
@@ -221,8 +221,8 @@ class Energy_Block(nn.Module):
             in_dim=in_dim, 
             multiplier=multiplier,
             bias=bias,
-            lagrangian=dhn.Lagrangian.relu,
-            activation=nn.ReLU()
+            lagrangian=dhn.Lagrangian.exp,
+            activation=torch.exp
         )
     
     def forward(self, x: TENSOR):
@@ -304,8 +304,8 @@ class _Energy_Block(nn.Module):
             in_dim=in_dim, 
             multiplier=multiplier,
             bias=bias,
-            lagrangian=dhn.Lagrangian.relu,
-            activation=nn.ReLU()
+            lagrangian=dhn.Lagrangian.exp,
+            activation=torch.exp
         )
     
     def forward(self, g_1: TENSOR):

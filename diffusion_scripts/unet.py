@@ -73,7 +73,8 @@ class Unet(nn.Module):
                     [
                         block_klass(dim_in, dim_in),
                         block_klass(dim_in, dim_in),
-                        dhn.layers.ConvAttention(dim_in),
+                        #dhn.layers.ConvAttention(dim_in),
+                        #nn.GroupNorm(1,dim_in),
                         Downsample(dim_in, dim_out)
                         if not is_last
                         else dhn.Conv2d(dim_in, dim_out, kernal_size=(3,3)), #padding changed from 1
@@ -83,7 +84,8 @@ class Unet(nn.Module):
 
         mid_dim = dims[-1]
         self.mid_block1 = block_klass(mid_dim, mid_dim)
-        self.mid_attn = dhn.ConvAttention(mid_dim)
+       # self.mid_attn = dhn.ConvAttention(mid_dim)
+       # self.mid_norm = nn.GroupNorm(1,mid_dim)
         self.mid_block2 = block_klass(mid_dim, mid_dim)
 
         for ind, (dim_in, dim_out) in enumerate(reversed(in_out)):
@@ -94,7 +96,8 @@ class Unet(nn.Module):
                     [
                         block_klass(dim_out + dim_in, dim_out),
                         block_klass(dim_out + dim_in, dim_out),
-                        dhn.ConvAttention(dim_out),
+                       # dhn.ConvAttention(dim_out),
+                       # nn.GroupNorm(1,dim_out),
                         Upsample(dim_out, dim_in)
                         if not is_last
                         else dhn.Conv2d(dim_out, dim_in, kernal_size=(3,3)),#padding changed from 1 to default, same
@@ -106,6 +109,7 @@ class Unet(nn.Module):
 
         self.final_res_block = block_klass(dim * 2, dim)
         self.final_conv = dhn.Conv2d(dim, self.out_dim, kernal_size=(1,1))
+        self.add = dhn.layers.Add()
         #self.hop_t = Energy_Hop_T()
     def forward(self, x, x_self_cond=None):
         #e_hop = self.hop_t(x)
@@ -122,15 +126,17 @@ class Unet(nn.Module):
 
         h = []
 
-        for block1, block2, attn, downsample in self.downs:
+        for block1, block2,downsample in self.downs: # attn, norm, 
             x, e_x = block1(x)
             e_count.add(e_x)
             h.append(x)
 
             x, e_x = block2(x)
             e_count.add(e_x)
-            x, e_x = attn(x) #this is not linear attn, and doesnt not add the residual
-            e_count.add(e_x)
+           # att, e_attn = attn(x) #this is not linear attn, and doesnt not add the residual
+           # att = norm(att)
+            #x, e_x = self.add(att, x)
+           # e_count.add(e_attn)
             h.append(x)
 
             x, e_x = downsample(x)
@@ -138,12 +144,14 @@ class Unet(nn.Module):
 
         x, e_x = self.mid_block1(x)
         e_count.add(e_x)
-        x, e_x = self.mid_attn(x)
-        e_count.add(e_x)
+        #attn, e_attn = self.mid_attn(x) #this is not linear attn, and doesnt not add the residual
+        #attn = self.mid_norm(attn)
+        #x, e_x = self.add(attn, x)
+        #e_count.add(e_attn)
         x, e_x = self.mid_block2(x)
         e_count.add(e_x)
 
-        for block1, block2, attn, upsample in self.ups:
+        for block1, block2, upsample in self.ups: # attn, norm,
             x = torch.cat((x, h.pop()), dim=1)
             x, e_x = block1(x)
             e_count.add(e_x)
@@ -151,8 +159,10 @@ class Unet(nn.Module):
             x = torch.cat((x, h.pop()), dim=1)
             x, e_x = block2(x)
             e_count.add(e_x)
-            x, e_x = attn(x)
-            e_count.add(e_x)
+           # att, e_attn = attn(x) #this is not linear attn, and doesnt not add the residual
+           # att = norm(att)
+            #x, e_x = self.add(attn, x)
+           # e_count.add(e_attn)
 
             x, e_x = upsample(x)
             e_count.add(e_x)
@@ -186,3 +196,14 @@ class Upsample(nn.Module):
         x = self.upsample(x)
         x, e_x = self.conv(x)
         return x, e_x
+    
+#not energy based
+class PreNorm(nn.Module):
+    def __init__(self, dim, fn):
+        super().__init__()
+        self.fn = fn
+        self.norm = nn.GroupNorm(1, dim)
+
+    def forward(self, x):
+        x = self.norm(x)
+        return self.fn(x)

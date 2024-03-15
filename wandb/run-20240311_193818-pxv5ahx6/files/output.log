@@ -1,0 +1,72 @@
+
+epoch: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ [==>......................... 31/782 .............................]  Step: 2s25ms | Tot: 59s998ms | Loss: 0.261
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x10f519f80>
+Traceback (most recent call last):
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1478, in __del__
+    self._shutdown_workers()
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1442, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 930, in wait
+    ready = selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt:
+Traceback (most recent call last):
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py", line 145, in <module>
+    manager.train()
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py", line 97, in train
+    self.optimizer.step()
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/optim/lr_scheduler.py", line 68, in wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/optim/optimizer.py", line 379, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/optim/optimizer.py", line 76, in _use_grad
+    ret = func(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/optim/adam.py", line 166, in step
+    adam(
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/optim/adam.py", line 316, in adam
+    func(params,
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/optim/adam.py", line 441, in _single_tensor_adam
+    param.addcdiv_(exp_avg, denom, value=-step_size)
+KeyboardInterrupt

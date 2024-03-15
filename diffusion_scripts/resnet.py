@@ -11,10 +11,12 @@ class Block(nn.Module):
         super().__init__()
         self.proj = dhn.layers.Conv2d(in_channels=dim, out_channels=dim_out, kernal_size=(3,3))
         #self.norm = dhn.neuron.Neuron(lagrangian=dhn.Lagrangian.layernorm, activation=nn.LayerNorm(init_shape))
+        #self.norm = nn.GroupNorm(groups, dim_out)
         self.act = dhn.neuron.Neuron(lagrangian=dhn.Lagrangian.relu, activation=nn.ReLU())
 
     def forward(self, x, scale_shift=None):
         x, e_proj = self.proj(x)
+        #x = self.norm(x)
         #x, e_norm = self.norm(x)
         x, e_act = self.act(x)
         return x, (e_proj+e_act)

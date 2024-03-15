@@ -1,0 +1,19 @@
+
+epoch: 0
+
+
+ [>........................... 3/782 ..............................]  Step: 12s467ms | Tot: 23s941ms | Loss: 1.069
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x10d9f9f80>
+Traceback (most recent call last):
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1477, in __del__
+    def __del__(self):
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 93618) is killed by signal: Interrupt: 2.
+Traceback (most recent call last):
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py", line 145, in <module>
+    manager.train()
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py", line 86, in train
+    batch = batch["pixel_values"].to(self.device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

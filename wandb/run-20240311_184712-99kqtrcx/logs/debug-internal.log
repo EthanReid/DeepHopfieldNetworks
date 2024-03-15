@@ -1,0 +1,590 @@
+2024-03-11 18:47:12,889 INFO    StreamThr :91932 [internal.py:wandb_internal():86] W&B internal server running at pid: 91932, started at: 2024-03-11 18:47:12.888088
+2024-03-11 18:47:12,890 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status
+2024-03-11 18:47:12,896 INFO    WriterThread:91932 [datastore.py:open_for_write():87] open: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/run-99kqtrcx.wandb
+2024-03-11 18:47:12,896 DEBUG   SenderThread:91932 [sender.py:send():382] send: header
+2024-03-11 18:47:12,944 DEBUG   SenderThread:91932 [sender.py:send():382] send: run
+2024-03-11 18:47:13,270 INFO    SenderThread:91932 [dir_watcher.py:__init__():211] watching files in: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files
+2024-03-11 18:47:13,270 INFO    SenderThread:91932 [sender.py:_start_run_threads():1136] run started: 99kqtrcx with start time 1710208032.889914
+2024-03-11 18:47:13,284 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: check_version
+2024-03-11 18:47:13,284 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: check_version
+2024-03-11 18:47:13,581 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: run_start
+2024-03-11 18:47:13,596 DEBUG   HandlerThread:91932 [system_info.py:__init__():27] System info init
+2024-03-11 18:47:13,596 DEBUG   HandlerThread:91932 [system_info.py:__init__():42] System info init done
+2024-03-11 18:47:13,596 INFO    HandlerThread:91932 [system_monitor.py:start():194] Starting system monitor
+2024-03-11 18:47:13,597 INFO    SystemMonitor:91932 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-03-11 18:47:13,597 INFO    HandlerThread:91932 [system_monitor.py:probe():214] Collecting system info
+2024-03-11 18:47:13,598 INFO    SystemMonitor:91932 [interfaces.py:start():190] Started cpu monitoring
+2024-03-11 18:47:13,598 DEBUG   HandlerThread:91932 [system_info.py:probe():151] Probing system
+2024-03-11 18:47:13,600 INFO    SystemMonitor:91932 [interfaces.py:start():190] Started disk monitoring
+2024-03-11 18:47:13,603 INFO    SystemMonitor:91932 [interfaces.py:start():190] Started gpuapple monitoring
+2024-03-11 18:47:13,605 INFO    SystemMonitor:91932 [interfaces.py:start():190] Started memory monitoring
+2024-03-11 18:47:13,606 INFO    SystemMonitor:91932 [interfaces.py:start():190] Started network monitoring
+2024-03-11 18:47:13,613 DEBUG   HandlerThread:91932 [system_info.py:_probe_git():136] Probing git
+2024-03-11 18:47:13,640 DEBUG   HandlerThread:91932 [system_info.py:_probe_git():144] Probing git done
+2024-03-11 18:47:13,640 DEBUG   HandlerThread:91932 [system_info.py:probe():199] Probing system done
+2024-03-11 18:47:13,640 DEBUG   HandlerThread:91932 [system_monitor.py:probe():223] {'os': 'macOS-14.3.1-arm64-arm-64bit', 'python': '3.11.5', 'heartbeatAt': '2024-03-12T01:47:13.600617', 'startedAt': '2024-03-12T01:47:12.867403', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py', 'codePathLocal': 'run_energy_transformer.py', 'codePath': 'run_energy_transformer.py', 'git': {'remote': 'https://github.com/EthanReid/DeepHopfieldNetworks.git', 'commit': '5c1787099951d763bf5a383d6617bda52258c3a0'}, 'email': 'erpreid@gmail.com', 'root': '/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks', 'host': 'Ethans-MacBook-Pro-16.local', 'username': 'ethanreid', 'executable': '/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/bin/python3', 'cpu_count': 10, 'cpu_count_logical': 10, 'disk': {'/': {'total': 926.3517189025879, 'used': 9.43375015258789}}, 'gpuapple': {'type': 'arm', 'vendor': 'Apple'}, 'memory': {'total': 64.0}}
+2024-03-11 18:47:13,640 INFO    HandlerThread:91932 [system_monitor.py:probe():224] Finished collecting system info
+2024-03-11 18:47:13,640 INFO    HandlerThread:91932 [system_monitor.py:probe():227] Publishing system info
+2024-03-11 18:47:13,641 INFO    HandlerThread:91932 [system_monitor.py:probe():229] Finished publishing system info
+2024-03-11 18:47:13,650 DEBUG   SenderThread:91932 [sender.py:send():382] send: files
+2024-03-11 18:47:13,650 INFO    SenderThread:91932 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-03-11 18:47:13,655 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: python_packages
+2024-03-11 18:47:13,655 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:47:13,655 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: python_packages
+2024-03-11 18:47:13,655 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:47:13,656 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:47:13,775 DEBUG   SenderThread:91932 [sender.py:send():382] send: telemetry
+2024-03-11 18:47:13,775 DEBUG   SenderThread:91932 [sender.py:send():382] send: telemetry
+2024-03-11 18:47:14,268 INFO    wandb-upload_0:91932 [upload_job.py:push():131] Uploaded file /var/folders/6b/s16tm0411hb1gclms1rkx3mh0000gn/T/tmpr_m019wfwandb/42iz58ym-wandb-metadata.json
+2024-03-11 18:47:14,273 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/requirements.txt
+2024-03-11 18:47:14,273 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/wandb-metadata.json
+2024-03-11 18:47:14,273 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:16,278 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:18,108 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:47:18,289 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:20,299 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:22,310 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:23,586 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:47:24,320 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:26,331 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:28,341 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:28,659 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:47:28,660 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:47:28,660 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:47:28,852 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:47:30,352 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:32,362 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:34,373 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:34,517 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:47:36,383 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:38,394 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:40,005 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:47:40,404 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:42,414 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:43,662 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:47:43,662 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:47:43,664 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:47:44,425 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:45,474 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:47:46,435 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/config.yaml
+2024-03-11 18:47:46,435 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:48,446 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:50,458 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:50,945 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:47:52,468 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:54,479 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:56,387 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:47:56,489 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:58,500 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:47:58,667 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:47:58,667 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:47:58,669 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:48:00,510 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:01,855 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:48:02,520 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:04,530 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:06,541 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:07,321 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:48:08,551 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:10,562 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:12,573 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:12,786 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:48:13,612 DEBUG   SystemMonitor:91932 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-03-11 18:48:13,613 DEBUG   SenderThread:91932 [sender.py:send():382] send: telemetry
+2024-03-11 18:48:13,613 DEBUG   SenderThread:91932 [sender.py:send():382] send: stats
+2024-03-11 18:48:13,673 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:48:13,674 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:48:13,674 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:48:14,594 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:16,605 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:18,281 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:48:18,615 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/config.yaml
+2024-03-11 18:48:18,615 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:20,622 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:22,631 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:23,721 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:48:24,641 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:26,652 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:28,663 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:28,672 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:48:28,672 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:48:28,675 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:48:28,784 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:48:30,673 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:32,681 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:33,928 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:48:34,692 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:36,703 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:38,711 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:39,378 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:48:40,721 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:42,762 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:43,618 DEBUG   SenderThread:91932 [sender.py:send():382] send: stats
+2024-03-11 18:48:43,677 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:48:43,677 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:48:43,680 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:48:44,771 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:44,851 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:48:46,781 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:48,792 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:50,316 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:48:50,802 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:52,813 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:54,823 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:55,778 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:48:56,833 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:48:58,683 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:48:58,683 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:48:58,685 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:48:58,844 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:00,850 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:01,252 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:49:02,856 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:04,863 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:06,691 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:49:06,873 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:08,884 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:10,894 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:12,172 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:49:12,904 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:13,625 DEBUG   SenderThread:91932 [sender.py:send():382] send: stats
+2024-03-11 18:49:13,688 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:49:13,688 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:49:13,688 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:49:14,914 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:16,925 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:17,647 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:49:18,935 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:20,946 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:22,954 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:23,150 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:49:24,964 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:26,975 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:28,596 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:49:28,693 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:49:28,693 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:49:28,693 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:49:28,985 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:30,996 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:33,007 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:34,069 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:49:35,019 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:37,028 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:39,039 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:39,542 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:49:41,049 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:43,060 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:43,630 DEBUG   SenderThread:91932 [sender.py:send():382] send: stats
+2024-03-11 18:49:43,697 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:49:43,698 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:49:43,698 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:49:45,011 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:49:45,070 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:47,077 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:49,087 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:50,460 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:49:51,098 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:53,108 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:55,119 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:55,927 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:49:57,133 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:49:58,703 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:49:58,703 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:49:58,704 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:49:59,141 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:01,152 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:01,393 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:50:03,162 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:05,173 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:06,852 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:50:07,183 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:09,194 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:11,205 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:12,325 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:50:13,215 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:13,636 DEBUG   SenderThread:91932 [sender.py:send():382] send: stats
+2024-03-11 18:50:13,708 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:50:13,708 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:50:13,708 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:50:15,227 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:17,252 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:17,780 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:50:19,265 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:21,279 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:23,264 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:50:23,290 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:25,301 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:27,314 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:28,713 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:50:28,713 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:50:28,714 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:50:28,714 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:50:29,320 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:31,331 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:33,339 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:34,220 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:50:35,349 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:37,368 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:39,378 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:39,659 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:50:41,389 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:43,399 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:43,641 DEBUG   SenderThread:91932 [sender.py:send():382] send: stats
+2024-03-11 18:50:43,718 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:50:43,718 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:50:43,718 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:50:45,114 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:50:45,410 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:47,420 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:49,431 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:50,601 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:50:51,441 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:53,452 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:55,462 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:56,056 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:50:57,473 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:50:58,723 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:50:58,723 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:50:58,724 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:50:59,483 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:01,494 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:01,555 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:51:03,504 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:05,515 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:06,999 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:51:07,526 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:09,536 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:11,547 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:12,477 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:51:13,558 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:13,650 DEBUG   SenderThread:91932 [sender.py:send():382] send: stats
+2024-03-11 18:51:13,730 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:51:13,732 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:51:13,733 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:51:15,568 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:17,579 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:17,967 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:51:19,589 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:21,600 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:22,606 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:23,483 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:51:24,617 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:26,644 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:28,654 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:28,731 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:51:28,734 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:51:28,734 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:51:28,734 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:51:30,665 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:32,675 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:34,379 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:51:34,685 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:36,696 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:38,707 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:39,840 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:51:40,717 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:42,724 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:43,651 DEBUG   SenderThread:91932 [sender.py:send():382] send: stats
+2024-03-11 18:51:43,739 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:51:43,739 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:51:43,739 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:51:44,732 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:45,338 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:51:46,742 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:48,752 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:50,763 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:50,781 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:51:52,773 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:54,784 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:56,262 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:51:56,794 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:51:58,742 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:51:58,743 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:51:58,745 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:51:58,805 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:00,815 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:01,734 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:52:02,823 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:04,834 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:06,845 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:07,246 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:52:08,850 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:10,861 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:12,751 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:52:12,871 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:13,657 DEBUG   SenderThread:91932 [sender.py:send():382] send: stats
+2024-03-11 18:52:13,743 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:52:13,744 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:52:13,746 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:52:14,882 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:16,914 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:18,203 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:52:18,925 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:20,932 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:22,944 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:23,684 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:52:24,956 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:26,962 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:28,749 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:52:28,749 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:52:28,749 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:52:28,751 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:52:28,968 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:30,978 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:32,989 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:33,914 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:52:34,999 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:37,010 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:39,019 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:39,389 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:52:41,030 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:43,040 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:43,663 DEBUG   SenderThread:91932 [sender.py:send():382] send: stats
+2024-03-11 18:52:43,753 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:52:43,754 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:52:43,756 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:52:44,895 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:52:45,048 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:47,055 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:49,063 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:50,383 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:52:51,070 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:53,080 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:55,103 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:55,879 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:52:57,111 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:52:58,759 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:52:58,759 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:52:58,761 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:52:59,122 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:01,132 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:01,355 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:53:03,143 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:05,154 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:06,843 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:53:07,164 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:09,174 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:11,186 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:12,335 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:53:13,195 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:13,668 DEBUG   SenderThread:91932 [sender.py:send():382] send: stats
+2024-03-11 18:53:13,762 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:53:13,762 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:53:13,766 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:53:15,204 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:17,215 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:17,829 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:53:19,225 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:21,236 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:23,243 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:23,283 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:53:25,254 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:27,264 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:28,735 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:53:28,766 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:53:28,766 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:53:28,768 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:53:29,275 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:31,285 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:33,296 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:34,214 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:53:35,306 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:37,317 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:39,326 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:39,684 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:53:41,336 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:43,347 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:43,674 DEBUG   SenderThread:91932 [sender.py:send():382] send: stats
+2024-03-11 18:53:43,771 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:53:43,771 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:53:43,773 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:53:45,159 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:53:45,357 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:47,368 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:49,378 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:50,629 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:53:51,389 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:53,400 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:55,411 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:56,125 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:53:57,422 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:53:58,776 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:53:58,776 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:53:58,779 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:53:59,432 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:01,443 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:01,597 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:54:03,454 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:05,464 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:07,079 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:54:07,475 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:09,485 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:11,496 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:12,532 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:54:13,503 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:13,680 DEBUG   SenderThread:91932 [sender.py:send():382] send: stats
+2024-03-11 18:54:13,781 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:54:13,782 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:54:13,784 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:54:15,514 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:17,521 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:17,987 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:54:19,531 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:21,542 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:23,440 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:54:23,552 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:25,563 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:27,593 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:28,787 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-11 18:54:28,787 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:54:28,787 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: stop_status
+2024-03-11 18:54:28,789 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:54:29,474 DEBUG   SenderThread:91932 [sender.py:send():382] send: exit
+2024-03-11 18:54:29,474 INFO    SenderThread:91932 [sender.py:send_exit():589] handling exit code: 255
+2024-03-11 18:54:29,474 INFO    SenderThread:91932 [sender.py:send_exit():591] handling runtime: 435
+2024-03-11 18:54:29,475 INFO    SenderThread:91932 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-11 18:54:29,475 INFO    SenderThread:91932 [sender.py:send_exit():597] send defer
+2024-03-11 18:54:29,475 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:29,475 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 0
+2024-03-11 18:54:29,475 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:29,475 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-03-11 18:54:29,475 INFO    SenderThread:91932 [sender.py:transition_state():617] send defer: 1
+2024-03-11 18:54:29,475 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:29,475 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 1
+2024-03-11 18:54:29,475 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:29,475 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-03-11 18:54:29,475 INFO    SenderThread:91932 [sender.py:transition_state():617] send defer: 2
+2024-03-11 18:54:29,476 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:29,476 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 2
+2024-03-11 18:54:29,476 INFO    HandlerThread:91932 [system_monitor.py:finish():203] Stopping system monitor
+2024-03-11 18:54:29,476 DEBUG   SystemMonitor:91932 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-03-11 18:54:29,476 DEBUG   SystemMonitor:91932 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-03-11 18:54:29,476 INFO    HandlerThread:91932 [interfaces.py:finish():202] Joined cpu monitor
+2024-03-11 18:54:29,476 INFO    HandlerThread:91932 [interfaces.py:finish():202] Joined disk monitor
+2024-03-11 18:54:29,476 INFO    HandlerThread:91932 [interfaces.py:finish():202] Joined gpuapple monitor
+2024-03-11 18:54:29,476 INFO    HandlerThread:91932 [interfaces.py:finish():202] Joined memory monitor
+2024-03-11 18:54:29,476 INFO    HandlerThread:91932 [interfaces.py:finish():202] Joined network monitor
+2024-03-11 18:54:29,477 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:29,477 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-03-11 18:54:29,477 INFO    SenderThread:91932 [sender.py:transition_state():617] send defer: 3
+2024-03-11 18:54:29,477 DEBUG   SenderThread:91932 [sender.py:send():382] send: stats
+2024-03-11 18:54:29,477 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:29,477 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 3
+2024-03-11 18:54:29,477 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:29,477 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-03-11 18:54:29,477 INFO    SenderThread:91932 [sender.py:transition_state():617] send defer: 4
+2024-03-11 18:54:29,477 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:29,477 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 4
+2024-03-11 18:54:29,477 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:29,477 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-03-11 18:54:29,477 INFO    SenderThread:91932 [sender.py:transition_state():617] send defer: 5
+2024-03-11 18:54:29,477 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:29,478 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 5
+2024-03-11 18:54:29,478 DEBUG   SenderThread:91932 [sender.py:send():382] send: summary
+2024-03-11 18:54:29,478 INFO    SenderThread:91932 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-03-11 18:54:29,478 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:29,478 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-03-11 18:54:29,478 INFO    SenderThread:91932 [sender.py:transition_state():617] send defer: 6
+2024-03-11 18:54:29,478 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:29,478 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 6
+2024-03-11 18:54:29,478 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:29,478 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-03-11 18:54:29,478 INFO    SenderThread:91932 [sender.py:transition_state():617] send defer: 7
+2024-03-11 18:54:29,478 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:54:29,478 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:29,478 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 7
+2024-03-11 18:54:29,478 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:29,478 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-03-11 18:54:29,604 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:29,605 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/wandb-summary.json
+2024-03-11 18:54:30,481 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-11 18:54:31,481 INFO    SenderThread:91932 [sender.py:transition_state():617] send defer: 8
+2024-03-11 18:54:31,482 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: poll_exit
+2024-03-11 18:54:31,482 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:31,482 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 8
+2024-03-11 18:54:31,483 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:31,483 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-03-11 18:54:31,483 INFO    SenderThread:91932 [job_builder.py:build():296] Attempting to build job artifact
+2024-03-11 18:54:31,484 INFO    SenderThread:91932 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-03-11 18:54:31,485 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-11 18:54:31,526 INFO    SenderThread:91932 [job_builder.py:build():402] adding wandb-job metadata file
+2024-03-11 18:54:31,528 INFO    SenderThread:91932 [sender.py:transition_state():617] send defer: 9
+2024-03-11 18:54:31,529 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: poll_exit
+2024-03-11 18:54:31,529 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:31,529 DEBUG   SenderThread:91932 [sender.py:send():382] send: artifact
+2024-03-11 18:54:31,529 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 9
+2024-03-11 18:54:31,616 INFO    Thread-12 :91932 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:32,498 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-11 18:54:32,582 INFO    wandb-upload_1:91932 [upload_job.py:push():89] Uploaded file /Users/ethanreid/Library/Application Support/wandb/artifacts/staging/tmpbujcws5e
+2024-03-11 18:54:32,585 INFO    wandb-upload_0:91932 [upload_job.py:push():89] Uploaded file /Users/ethanreid/Library/Application Support/wandb/artifacts/staging/tmpeqkrh9b1
+2024-03-11 18:54:33,532 INFO    SenderThread:91932 [sender.py:send_artifact():1494] sent artifact job-https___github.com_EthanReid_DeepHopfieldNetworks.git_run_energy_transformer.py - {'id': 'QXJ0aWZhY3Q6NzUyMzI2OTAz', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE0NzkwMTQ4OQ==', 'latestArtifact': None}}
+2024-03-11 18:54:33,532 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:33,533 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-03-11 18:54:33,533 INFO    SenderThread:91932 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-03-11 18:54:33,626 INFO    SenderThread:91932 [dir_watcher.py:finish():388] scan: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files
+2024-03-11 18:54:33,628 INFO    SenderThread:91932 [dir_watcher.py:finish():402] scan save: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/requirements.txt requirements.txt
+2024-03-11 18:54:33,628 INFO    SenderThread:91932 [dir_watcher.py:finish():402] scan save: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log output.log
+2024-03-11 18:54:33,628 INFO    SenderThread:91932 [dir_watcher.py:finish():402] scan save: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/config.yaml config.yaml
+2024-03-11 18:54:33,629 INFO    SenderThread:91932 [dir_watcher.py:finish():402] scan save: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/wandb-summary.json wandb-summary.json
+2024-03-11 18:54:33,629 INFO    SenderThread:91932 [dir_watcher.py:finish():402] scan save: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/wandb-metadata.json wandb-metadata.json
+2024-03-11 18:54:33,629 INFO    SenderThread:91932 [sender.py:transition_state():617] send defer: 10
+2024-03-11 18:54:33,629 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: poll_exit
+2024-03-11 18:54:33,631 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:33,631 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 10
+2024-03-11 18:54:33,632 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:33,632 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-03-11 18:54:33,632 INFO    SenderThread:91932 [file_pusher.py:finish():175] shutting down file pusher
+2024-03-11 18:54:33,961 INFO    wandb-upload_2:91932 [upload_job.py:push():131] Uploaded file /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/output.log
+2024-03-11 18:54:34,065 INFO    wandb-upload_3:91932 [upload_job.py:push():131] Uploaded file /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/wandb-summary.json
+2024-03-11 18:54:34,510 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-11 18:54:34,511 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: poll_exit
+2024-03-11 18:54:34,513 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: status_report
+2024-03-11 18:54:35,518 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-11 18:54:35,518 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: poll_exit
+2024-03-11 18:54:35,610 INFO    wandb-upload_0:91932 [upload_job.py:push():131] Uploaded file /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/config.yaml
+2024-03-11 18:54:35,658 INFO    wandb-upload_1:91932 [upload_job.py:push():131] Uploaded file /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/files/requirements.txt
+2024-03-11 18:54:35,859 INFO    Thread-11 (_thread_body):91932 [sender.py:transition_state():617] send defer: 11
+2024-03-11 18:54:35,860 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:35,860 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 11
+2024-03-11 18:54:35,861 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:35,861 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-03-11 18:54:35,861 INFO    SenderThread:91932 [file_pusher.py:join():181] waiting for file pusher
+2024-03-11 18:54:35,861 INFO    SenderThread:91932 [sender.py:transition_state():617] send defer: 12
+2024-03-11 18:54:35,861 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:35,861 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 12
+2024-03-11 18:54:35,862 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:35,862 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-03-11 18:54:35,862 INFO    SenderThread:91932 [file_stream.py:finish():595] file stream finish called
+2024-03-11 18:54:36,177 INFO    SenderThread:91932 [file_stream.py:finish():599] file stream finish is done
+2024-03-11 18:54:36,178 INFO    SenderThread:91932 [sender.py:transition_state():617] send defer: 13
+2024-03-11 18:54:36,178 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:36,178 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 13
+2024-03-11 18:54:36,178 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:36,178 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-03-11 18:54:36,179 INFO    SenderThread:91932 [sender.py:transition_state():617] send defer: 14
+2024-03-11 18:54:36,179 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: defer
+2024-03-11 18:54:36,179 INFO    HandlerThread:91932 [handler.py:handle_request_defer():172] handle defer: 14
+2024-03-11 18:54:36,179 DEBUG   SenderThread:91932 [sender.py:send():382] send: final
+2024-03-11 18:54:36,179 DEBUG   SenderThread:91932 [sender.py:send():382] send: footer
+2024-03-11 18:54:36,179 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: defer
+2024-03-11 18:54:36,179 INFO    SenderThread:91932 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-03-11 18:54:36,180 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-11 18:54:36,181 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-11 18:54:36,181 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: server_info
+2024-03-11 18:54:36,181 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: poll_exit
+2024-03-11 18:54:36,182 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: poll_exit
+2024-03-11 18:54:36,182 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: server_info
+2024-03-11 18:54:36,185 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: get_summary
+2024-03-11 18:54:36,185 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: sampled_history
+2024-03-11 18:54:36,185 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-11 18:54:36,186 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: job_info
+2024-03-11 18:54:36,269 DEBUG   SenderThread:91932 [sender.py:send_request():409] send_request: job_info
+2024-03-11 18:54:36,270 INFO    MainThread:91932 [wandb_run.py:_footer_history_summary_info():3857] rendering history
+2024-03-11 18:54:36,270 INFO    MainThread:91932 [wandb_run.py:_footer_history_summary_info():3889] rendering summary
+2024-03-11 18:54:36,271 INFO    MainThread:91932 [wandb_run.py:_footer_sync_info():3816] logging synced files
+2024-03-11 18:54:36,272 DEBUG   HandlerThread:91932 [handler.py:handle_request():146] handle_request: shutdown
+2024-03-11 18:54:36,272 INFO    HandlerThread:91932 [handler.py:finish():869] shutting down handler
+2024-03-11 18:54:37,190 INFO    WriterThread:91932 [datastore.py:close():296] close: /Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/wandb/run-20240311_184712-99kqtrcx/run-99kqtrcx.wandb
+2024-03-11 18:54:37,274 INFO    SenderThread:91932 [sender.py:finish():1572] shutting down sender
+2024-03-11 18:54:37,275 INFO    SenderThread:91932 [file_pusher.py:finish():175] shutting down file pusher
+2024-03-11 18:54:37,275 INFO    SenderThread:91932 [file_pusher.py:join():181] waiting for file pusher

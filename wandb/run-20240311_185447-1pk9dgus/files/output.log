@@ -1,0 +1,36 @@
+
+epoch: 0
+
+
+
+
+
+ [==>......................... 50/1563 ............................]  Step: 223ms | Tot: 10s526ms | Loss: 0.125
+Traceback (most recent call last):
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py", line 145, in <module>
+    manager.train()
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py", line 91, in train
+    loss = p_losses(self.model, batch, t, loss_type="huber")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/diffusion_scripts/diffusion.py", line 57, in p_losses
+    predicted_noise = denoise_model(x_noisy)
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1510, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1519, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/diffusion_scripts/energy_transformer.py", line 316, in forward
+    dEdg, _ = self.evolve(
+              ^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/diffusion_scripts/energy_transformer.py", line 276, in evolve
+    g = norm(x)
+        ^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1510, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1519, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

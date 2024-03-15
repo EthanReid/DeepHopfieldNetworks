@@ -4,7 +4,7 @@ from einops import rearrange
 TENSOR: TypeAlias = torch.tensor
 from inspect import isfunction
 
-def transpose(x: TENSOR) -> TENSOR:
+def transpose(x: torch.Tensor) -> torch.Tensor:
     """Transposes the last two dimensions of a tensor"""
     return rearrange(x, "... h w -> ... w h")
 

@@ -25,19 +25,19 @@ class Manager:
         self.batch_size = 512
         self.epochs = epochs
         self.transformed_dataset = dataset.with_transform(transforms).remove_columns("label")
-        self.dataloader = DataLoader(self.transformed_dataset["train"], batch_size=self.batch_size, num_workers=4, shuffle=True)
+        self.dataloader = DataLoader(self.transformed_dataset["train"], batch_size=self.batch_size, num_workers=1, shuffle=True)
 
         self.device = get_device()
         
-        self.lr = 1e-3
+        self.lr = 5e-3
         hn_mult = 2
 
         x = torch.randn(1, 1, 28, 28)
         #self.model = Energy_Model(self.image_size, multiplier=hn_mult)
         #self.model = Energy_Model_linked(self.image_size, multiplier=hn_mult)
         #self.model = Energy_Model_Conv(in_channels=1, out_channels=4, kernal_size=(3,3))
-        self.model = Energy_Model_Conv_Linked(in_channels=1, out_channels=8, kernal_size=(3,3))
-        #self.model = Energy_Model_T()
+        #self.model = Energy_Model_Conv_Linked(in_channels=1, out_channels=8, kernal_size=(3,3))
+        self.model = Energy_Model_T()
         summary(self.model)
         self.model.to(self.device)
         self.optimizer = Adam(self.model.parameters(), lr=self.lr)
@@ -76,27 +76,26 @@ class Manager:
 
                 loss = p_losses(self.model, batch, t, loss_type="huber")
                 current_loss = loss.item()
-                total_loss += current_loss
+                total_loss += current_loss if current_loss != torch.nan else 0
 
                 loss.backward()
-                #torch.nn.utils.clip_grad_norm_(self.model.parameters(), 1)
+                torch.nn.utils.clip_grad_norm_(self.model.parameters(), 1)
                 self.optimizer.step()
 
                 # save generated images
-                if samples_seen > self.save_and_sample_every:
-                    samples_seen = 0
-                    milestone += 1
-                    print("saving images")
-                    all_images = torch.Tensor(sample(self.model, image_size=self.image_size,batch_size=1, channels=self.channels))
-                    all_images = (all_images + 1) * 0.5
-                    all_images = all_images.squeeze(1)
-                    save_image(all_images, str(self.results_folder / f'sample-{milestone}.png'), nrow = 10)
                 
                 progress_bar(step, len(self.dataloader), 'Loss: %.3f' % (total_loss/(step+1),))
                 samples_seen += batch_size
             wandb.log({'epoch': epoch, 'train_loss': total_loss/(samples_seen/self.batch_size), "lr": self.optimizer.param_groups[0]["lr"],
                 "epoch_time": time.time()-start})
-                
+            
+            samples_seen = 0
+            milestone += 1
+            print("saving images")
+            all_images = torch.Tensor(sample(self.model, image_size=self.image_size,batch_size=1, channels=self.channels))
+            all_images = (all_images + 1) * 0.5
+            all_images = all_images.squeeze(1)
+            save_image(all_images, str(self.results_folder / f'sample-{milestone}.png'), nrow = 10)
             if best_loss==None or best_loss>current_loss:
                 best_loss = current_loss
                 print('Saving..')
@@ -123,7 +122,7 @@ class Manager:
         checkpoint = torch.load('./testing/energy_model_basic_hop/checkpoint/{}'.format("conv_energy_model-ckpt.t7"))
         self.model.load_state_dict(checkpoint['model'])
 if __name__ == '__main__':
-    manager = Manager(epochs=20)
+    manager = Manager(epochs=100)
     #manager.load_ckpt()
     manager.train()
     #manager.test()

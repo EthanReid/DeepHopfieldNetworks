@@ -6,3 +6,4 @@
 *.pyc
 *.png
 testing/energy_model_basic_hop/.DS_Store
+*.wandb
