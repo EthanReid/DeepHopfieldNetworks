@@ -16,7 +16,8 @@ import os
 from torchsummary import summary
 import wandb
 import time
-PYTORCH_ENABLE_MPS_FALLBACK=1
+
+#PYTORCH_ENABLE_MPS_FALLBACK=1
 
 class Manager:
     def __init__(self, args) -> None:
@@ -138,7 +139,7 @@ class Manager:
                     "optimizer": self.optimizer.state_dict()}
                 if not os.path.isdir('checkpoint'):
                     os.mkdir('checkpoint')
-                torch.save(state, './testing/energy_transformer/checkpoint/et-1ckpt.t7')
+                torch.save(state, './testing/energy_transformer/checkpoint/et-patch_{}-hnmult_{}.t7'.format(args.patch_size, args.hnmult))
             self.scheduler.step()
     def test(self):
         '''
@@ -164,7 +165,7 @@ if __name__ == '__main__':
     parser.add_argument('--bw', action='store_true', help="black&white or RGB")
     parser.add_argument("--epochs", default=100, type=int)
     parser.add_argument("--hn_mult", default=4, type=int, help="hopfield multiplier")
-    parser.add_argument("--patch_size", default=4, help="number of pixes per dimension of patch")
+    parser.add_argument("--patch_size", default=4, type=int, help="number of pixles per dimension of patch")
     parser.add_argument("--tkn_dim", default=64, type=int, help="Token dim for Energy Transformer")
     parser.add_argument("--qk_dim", default=64, type=int, help="QK dim for Energy Transformer")
     parser.add_argument("--nheads", default=4, type=int, help="num of heads for Energy Transformer")
