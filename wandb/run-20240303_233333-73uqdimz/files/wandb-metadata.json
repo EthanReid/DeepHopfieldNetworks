@@ -1,0 +1,37 @@
+{
+    "os": "macOS-14.3.1-arm64-arm-64bit",
+    "python": "3.11.5",
+    "heartbeatAt": "2024-03-04T05:33:33.779294",
+    "startedAt": "2024-03-04T05:33:33.232550",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_unet.py",
+    "codePathLocal": "run_unet.py",
+    "codePath": "run_unet.py",
+    "git": {
+        "remote": "https://github.com/EthanReid/DeepHopfieldNetworks.git",
+        "commit": "028cdba753d5bc4dd46352af279bc4da50ea4fa7"
+    },
+    "email": "erpreid@gmail.com",
+    "root": "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks",
+    "host": "Ethans-MacBook-Pro-16.local",
+    "username": "ethanreid",
+    "executable": "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/bin/python3",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "disk": {
+        "/": {
+            "total": 926.3517189025879,
+            "used": 9.43375015258789
+        }
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 64.0
+    }
+}
