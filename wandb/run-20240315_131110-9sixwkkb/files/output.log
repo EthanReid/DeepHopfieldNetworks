@@ -1,0 +1,30 @@
+
+epoch: 0
+Traceback (most recent call last):
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py", line 147, in <module>
+    manager.train()
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py", line 84, in train
+    for step, batch in enumerate(self.dataloader):
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 674, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 32, in fetch
+    data.append(next(self.dataset_iter))
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/datasets/iterable_dataset.py", line 1388, in __iter__
+    for key, example in ex_iterable:
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/datasets/iterable_dataset.py", line 679, in __iter__
+    yield from self._iter()
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/datasets/iterable_dataset.py", line 752, in _iter
+    transformed_example.update(self.function(*function_args, **self.fn_kwargs))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py", line 29, in <lambda>
+    self.transformed_dataset = dataset.map(lambda x: transforms(x))
+                                                     ^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/diffusion_scripts/misc.py", line 90, in transforms
+    examples["pixel_values"] = [transform(image) for image in examples["image"]] #changed from image.convert("L")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'JpegImageFile' object is not iterable

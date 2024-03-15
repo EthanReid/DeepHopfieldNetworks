@@ -1,0 +1,8 @@
+datasets
+einops
+numpy
+torch
+torch_summary
+torchvision
+tqdm
+wandb

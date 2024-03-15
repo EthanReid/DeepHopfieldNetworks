@@ -1,0 +1,34 @@
+
+epoch: 0
+Traceback (most recent call last):
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py", line 147, in <module>
+    manager.train()
+  File "/Users/ethanreid/Documents/DevProjects/Research/DeepHopfieldNetworks/run_energy_transformer.py", line 84, in train
+    for step, batch in enumerate(self.dataloader):
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 438, in __iter__
+    return self._get_iterator()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 386, in _get_iterator
+    return _MultiProcessingDataLoaderIter(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ethanreid/Documents/DevProjects/Books/advancedDeepLearningWithPython/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1039, in __init__
+    w.start()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+                  ^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/context.py", line 288, in _Popen
+    return Popen(process_obj)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/popen_spawn_posix.py", line 47, in _launch
+    reduction.dump(process_obj, fp)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/reduction.py", line 60, in dump
+    ForkingPickler(file, protocol).dump(obj)
+AttributeError: Can't pickle local object 'Manager.__init__.<locals>.<lambda>'

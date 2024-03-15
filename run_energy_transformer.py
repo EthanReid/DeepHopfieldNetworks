@@ -10,37 +10,53 @@ from pathlib import Path
 from diffusion_scripts import *
 from datasets import load_dataset
 from torch.utils.data import DataLoader
-
+import argparse
 import dhn
 import os
 from torchsummary import summary
 import wandb
 import time
 PYTORCH_ENABLE_MPS_FALLBACK=1
+
 class Manager:
-    def __init__(self, epochs) -> None:
-        dataset = load_dataset("cifar10")
-        self.image_size = 32
-        self.channels = 3
-        self.batch_size = 64
-        self.epochs = epochs
-        self.transformed_dataset = dataset.with_transform(transforms).remove_columns("label")
-        self.dataloader = DataLoader(self.transformed_dataset["train"], batch_size=self.batch_size, num_workers=2, shuffle=True)
+    def __init__(self, args) -> None:
+        dataset = load_dataset("imagenet-1k", split='train', streaming=args.stream_data, use_auth_token=True)
+        self.image_size = 128
+        self.batch_size = args.bs
+        self.epochs = args.epochs
+        self.num_training_images = 1281167
+        self.num_batches = self.num_training_images//self.batch_size
+        if args.stream_data:
+            if args.bw:
+                self.channels = 1
+                self.transformed_dataset = CustomImageDataset(dataset=dataset, transform=transform, bw=True)
+            else:
+                self.channels = 3
+                self.transformed_dataset = CustomImageDataset(dataset=dataset, transform=transform_color, bw=False)
+        else:
+            if args.bw:
+                self.channels = 1
+                self.transformed_dataset = dataset.with_transform(transforms).remove_columns("label")
+            else:
+                self.channels = 3
+                self.transformed_dataset = dataset.with_transform(transforms_color).remove_columns("label")
+        #self.transformed_dataset = dataset.map(transforms, remove_columns=["label"], batched=True)
+        self.dataloader = DataLoader(dataset=self.transformed_dataset,batch_size=self.batch_size, num_workers=args.nworkers if not args.stream_data else min(args.nworkers,dataset.n_shards), shuffle=False)
 
         self.device = get_device()
         
-        self.lr = 1e-3
-        hn_mult = 4
-        patch_size = 2
-        tkn_dim = 1024
-        qk_dim = 512
-        nheads = 4
+        self.lr = args.lr
+        hn_mult = args.hn_mult
+        patch_size = args.patch_size
+        tkn_dim = args.tkn_dim
+        qk_dim = args.qk_dim
+        nheads = args.nheads
         out_dim = None
         time_steps = 1
         blocks = 1
 
-        x = torch.randn(1, 3, 32, 32)
-        patch_fn = Patch(dim=patch_size)
+        x = torch.randn(1, self.channels, self.image_size, self.image_size)
+        patch_fn = Patch(dim=patch_size, n=self.image_size)
         self.model = ET(
             x,
             patch_fn,
@@ -63,10 +79,10 @@ class Manager:
         self.test_out.mkdir(exist_ok=True)
         self.save_and_sample_every = 100000
 
-        watermark = "{}_lr{}".format("et", self.lr)
-        wandb.init(project="diffusion_testing",
-        name=watermark)
-        wandb.watch(self.model)
+        watermark = "{}_lr{}_heads{}_hnmult{}".format("energy_transformer", args.lr, args.nheads, args.hn_mult)
+        wandb.init(project="imagenet1-k_energy",
+                name=watermark)
+        wandb.config.update(args)
     
     def train(self, epochs=None):
         if epochs == None:
@@ -100,7 +116,8 @@ class Manager:
                 #if samples_seen > self.save_and_sample_every:
                 #i had image out here
                 
-                progress_bar(step, len(self.dataloader), 'Loss: %.3f' % (total_loss/(step+1),))
+                #progress_bar(step, len(self.dataloader), 'Loss: %.3f' % (total_loss/(step+1),))
+                progress_bar(step, self.num_batches, 'Loss: %.3f' % (total_loss/(step+1),))
                 samples_seen += batch_size
 
             wandb.log({'epoch': epoch, 'train_loss': total_loss/(samples_seen/self.batch_size), "lr": self.optimizer.param_groups[0]["lr"],
@@ -132,15 +149,36 @@ class Manager:
         all_images = all_images.squeeze(1)
         save_image(all_images, str(self.test_out / f'test_out.png'), nrow = 10)
     
-    def load_ckpt(self):
+    def load_ckpt(self, ckpt):
         '''
         this is hard coded, fix it
         '''
         assert os.path.isdir('checkpoint'), 'Error: no checkpoint directory found!'
-        checkpoint = torch.load('./testing/energy_transformer/checkpoint/{}'.format("et-1ckpt.t7"))
+        checkpoint = torch.load('./testing/energy_transformer/checkpoint/{}'.format(ckpt))
         self.model.load_state_dict(checkpoint['model'])
 if __name__ == '__main__':
-    manager = Manager(epochs=100)
-    #manager.load_ckpt()
-    manager.train()
-    #manager.test()
+    parser = argparse.ArgumentParser(description='Energy Transformer Training')
+    parser.add_argument('--lr', default=1e-3, type=float, help='learning rate') # resnets.. 1e-3, Vit..1e-4
+    parser.add_argument('--resume', '-r', action='store_true', help='resume from checkpoint')
+    parser.add_argument('--bs', type=int, default='32')
+    parser.add_argument('--bw', action='store_true', help="black&white or RGB")
+    parser.add_argument("--epochs", default=100, type=int)
+    parser.add_argument("--hn_mult", default=4, type=int, help="hopfield multiplier")
+    parser.add_argument("--patch_size", default=4, help="number of pixes per dimension of patch")
+    parser.add_argument("--tkn_dim", default=64, type=int, help="Token dim for Energy Transformer")
+    parser.add_argument("--qk_dim", default=64, type=int, help="QK dim for Energy Transformer")
+    parser.add_argument("--nheads", default=4, type=int, help="num of heads for Energy Transformer")
+    parser.add_argument("--ckpt", default="ckpt.t7", help="Name of checkpoint file")
+    parser.add_argument("--test", action="store_true", help="If set, run test() instead of train(), must be used in conjunction with --resume")
+    parser.add_argument("--stream_data", action="store_true", help="stream hugging face dataset")
+    parser.add_argument("--nworkers", default=0, type=int, help="num of workers for dataloader, if streaming, should be set to num shards")
+    parser.add_argument("--shuffle", action="store_true", help="shuffle dataset, only works if not streaming")
+    args = parser.parse_args()
+
+    manager = Manager(args=args)
+    if args.resume:
+        manager.load_ckpt()
+    if args.test:
+        manager.test()
+    else:
+        manager.train()

@@ -6,8 +6,12 @@ from typing import Callable, Optional, Union, Sequence
 from inspect import isfunction
 import math
 from einops.layers.torch import Rearrange
-from torchvision.transforms import Compose, ToTensor, Lambda, ToPILImage, CenterCrop, Resize
+from torchvision.transforms import Compose, ToTensor, Lambda, ToPILImage, CenterCrop, Resize, RandomHorizontalFlip
 from torchvision import transforms
+from PIL import Image
+import io
+from torch.utils.data import IterableDataset, DataLoader
+
 
 
 TENSOR = torch.Tensor
@@ -80,15 +84,52 @@ def num_to_groups(num, divisor):
 
 
 transform = Compose([
+            transforms.Resize(128),
+            transforms.CenterCrop(128),
+            transforms.RandomHorizontalFlip(),
+            transforms.ToTensor()
+            #transforms.Lambda(lambda t: (t * 2) - 1) #I dont want it to be betwen 0 and 1
+])
+transform_color = Compose([
+            transforms.Lambda(lambda x: x.convert("RGB")),
+            transforms.Resize(128),
+            transforms.CenterCrop(128),
             transforms.RandomHorizontalFlip(),
             transforms.ToTensor()
             #transforms.Lambda(lambda t: (t * 2) - 1) #I dont want it to be betwen 0 and 1
 ])
 def transforms(examples):
-   examples["pixel_values"] = [transform(image) for image in examples["img"]] #changed from image.convert("L")
-   del examples["img"]
-
+   examples["pixel_values"] = [transform(image.convert("L")) for image in examples["image"]] #changed from image.convert("L")
+   del examples["image"]
    return examples
+
+def transforms_color(examples):
+   examples["pixel_values"] = [transform_color(image) for image in examples["image"]] #changed from image.convert("L")
+   del examples["image"]
+   return examples
+
+class CustomImageDataset(IterableDataset):
+    def __init__(self, dataset, transform=None, bw=False):
+        self.dataset = dataset
+        self.transform = transform
+        self.bw = bw
+
+    def preprocess(self, item):
+        # Convert bytes to PIL Image
+        if self.bw:
+            image = item['image'].convert("L")
+        else:
+            image = item['image'].convert("RGB")
+        
+        # Apply the transformation
+        if self.transform:
+            image = self.transform(image)
+
+        return {"pixel_values":image}
+
+    def __iter__(self):
+        for item in self.dataset:
+            yield self.preprocess(item)
 
 class SinusoidalPositionEmbeddings(nn.Module):
     def __init__(self, dim):

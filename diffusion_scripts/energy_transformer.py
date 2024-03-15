@@ -183,6 +183,7 @@ class ET(nn.Module):
     ):
         super().__init__()
 
+        self.original_shape = x.shape
         x = patch(x)
         _, n, d = x.shape
         print("init x shape: {}".format(str(x.shape)))
@@ -280,7 +281,7 @@ class ET(nn.Module):
             else:
                 _dEdg += dEdg
                 x = x - alpha * dEdg
-                x = rearrange(x, "b (h w) c -> b c h w", h=32)#was 28
+                x = rearrange(x, "b (h w) c -> b c h w", h=self.original_shape[-1])#was 28
             if return_energy:
                 energies.append(E)
                 
